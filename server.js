@@ -15,7 +15,7 @@ const openai = new OpenAI({
 });
 
 app.get("/", async (req, res) => {
-    return res.status(200,'API ia rodando')
+    return res.status(200).send('API RODANDO')
 })
 
 app.post("/ia-finanzapp", async (req, res) => {
