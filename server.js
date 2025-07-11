@@ -14,6 +14,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+app.get("/", async (req, res) => {
+    return res.status(200)
+})
+
 app.post("/ia-finanzapp", async (req, res) => {
   const { mensagem } = req.body;
 
