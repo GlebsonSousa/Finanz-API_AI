@@ -15,7 +15,7 @@ const openai = new OpenAI({
 });
 
 app.get("/", async (req, res) => {
-    return res.status(200)
+    return res.status(200,'API ia rodando')
 })
 
 app.post("/ia-finanzapp", async (req, res) => {
@@ -27,7 +27,7 @@ app.post("/ia-finanzapp", async (req, res) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: process.env.model,
       temperature: 0.3,
       messages: [
         {
