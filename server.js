@@ -27,7 +27,7 @@ app.post("/ia-finanzapp", async (req, res) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: process.env.model,
+      model: process.env.MODEL,
       temperature: 0.3,
       messages: [
         {
