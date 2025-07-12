@@ -25,6 +25,11 @@ app.post("/ia-finanzapp", async (req, res) => {
     return res.status(400).json({ error: "Mensagem é obrigatória." });
   }
 
+  if(typeof mensagem !== "string") {
+    mensagem = JSON.stringify(mensagem)
+  }
+
+
   try {
     const response = await openai.chat.completions.create({
       model: process.env.MODEL,
