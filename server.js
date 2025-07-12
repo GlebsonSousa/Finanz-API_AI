@@ -114,7 +114,7 @@ app.post("/ia-finanzapp", async (req, res) => {
           7. Se o backend retornar dados (como resultado de uma busca), **não envie novos comandos**, apenas formate a mensagem para o usuário.
           8. A IA deve sempre decidir a próxima ação com base no contexto da conversa. Toda a lógica da interação está com a IA, não com o backend.
           9. Caso o usuario peça algo que não esta disponivel a IA deve responder dizendo que este tipo de comando não esta disponivel
-          10. O campo mensagem sempre deve estar no formato perfeito para mandar para o cliente, nunca coloque caracteres que o cliente nao entenda com /n
+          10. A mensagem **nunca deve conter** '\n', '\\n', ou qualquer caractere de formatação especial. Envie texto como se fosse uma conversa de WhatsApp.
           ---
 
           ### 📦 Exemplo: mensagem ambígua
@@ -142,6 +142,26 @@ app.post("/ia-finanzapp", async (req, res) => {
             "destinatario": "backend",
             "comandos": [],
             "mensagem": "responda de forma simpática e criativa, dizendo que entende mas que essa ação não é o foco seja criativo**, e **explique brevemente no que você pode ajudar (finanças, registros, relatórios, etc)"
+          }
+            
+          ### 📦 Exemplo de verificação de histórico:
+
+          Mensagem do usuário:
+          "Eu te falei que recebi 1000 hoje?"
+
+          Resposta:
+          {
+            "destinatario": "backend",
+            "memoria": true,
+            "retornar": true,
+            "comandos": [
+              {
+                "comando": "pedido_relatorio_diario",
+                "referencia_data": "2025-07-12",
+                "categoria": "salário"
+              }
+            ],
+            "mensagem": "Já vou conferir aqui se esse recebimento de hoje tá registrado! 💰🔍"
           }`,
         },
         {
