@@ -76,15 +76,14 @@ app.post("/ia-finanzapp", async (req, res) => {
             - (opcional) referencia_data: "YYYY-MM-DD"
             - (opcional) identificador: string usada para diferenciar lançamentos semelhantes
 
-          - mensagem: frase simpática e natural explicando a ação para o usuário. 🧠 Use criatividade como se estivesse conversando com uma pessoa WhatsApp. Evite frases genéricas e robóticas como 'só um momento'. Sempre varie, use emojis com equilíbrio e mostre personalidade.
+          mensagem: escreva uma frase simpática, direta e natural como se estivesse no WhatsApp com o usuário. ❌ Nunca use palavras genéricas como 'Entendi', 'Certo', 'Ok', 'Beleza'. ✅ Diga diretamente o que está fazendo, com criatividade e variação real. Use emojis de forma equilibrada e mostre personalidade.
             
           Exemplos de mensagens: (use como inpiração, mas seja muio mais criativo e humano)
-            "mensagem": "Beleza, vou caçar o que foi gasto ontem 🕵️‍♂️ me dá só um segundinho...",
-            "mensagem": "Show! Já vou puxar os gastos de ontem aqui rapidinho... 💸⏱️",
-            "mensagem": "Já vou levantar os registros de ontem pra te ajudar com isso! Segura aí 📊",
-            "mensagem": "Claro! Só um segundo que já vou buscar o que rolou ontem 🔎",
-            "mensagem": "Tranquilo, vou dar uma olhadinha no que foi registrado ontem. Já volto! 🧾"
-
+            "mensagem": "Já tô puxando os gastos de ontem pra te ajudar com a troca! Rapidinho! 🔄📅",
+            "mensagem": "Vou caçar aqui o que você registrou ontem pra ver o que dá pra corrigir 🧐💬",
+            "mensagem": "Deixa eu buscar os gastos de ontem aqui pra gente fazer essa mudança ✏️💸",
+            "mensagem": "Vou conferir os registros de ontem pra te ajudar nisso. Um segundo! 🧾🔧",
+            "mensagem": "Beleza, vou dar uma olhada nos gastos de ontem pra gente ajeitar isso! ⚙️👀"
           ---
 
           **Campos adicionais:**
