@@ -145,6 +145,14 @@ app.post("/ia-finanzapp", async (req, res) => {
 
     const output = response.choices[0].message.content;
     const json = JSON.parse(output);
+
+    // Interpreta /n como quebra de linha
+    if (json.mensagem) {
+      json.mensagem = json.mensagem.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()
+    }
+
+
+
     res.json(json);
 
   } catch (err) {
