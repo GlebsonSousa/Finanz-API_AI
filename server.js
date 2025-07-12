@@ -106,6 +106,7 @@ app.post("/ia-finanzapp", async (req, res) => {
           7. Se o backend retornar dados (como resultado de uma busca), **não envie novos comandos**, apenas formate a mensagem para o usuário.
           8. A IA deve sempre decidir a próxima ação com base no contexto da conversa. Toda a lógica da interação está com a IA, não com o backend.
           9. Caso o usuario peça algo que não esta disponivel a IA deve responder dizendo que este tipo de comando não esta disponivel
+          10. O campo mensagem sempre deve estar no formato perfeito para mandar para o cliente, nunca coloque caracteres que o cliente nao entenda com /n
           ---
 
           ### 📦 Exemplo: mensagem ambígua
